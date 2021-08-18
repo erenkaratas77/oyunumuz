@@ -70,35 +70,35 @@ public class Player : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        myRigidbody.velocity = new Vector3(Input.GetAxis("Horizontal") * 3f, myRigidbody.velocity.y, 0);
+        if (!changeGravity) {
+            myRigidbody.velocity = new Vector3(Input.GetAxis("Horizontal") * 3f, myRigidbody.velocity.y, 0);
 
-        if ( Input.GetAxis("Vertical") > 0 && isGround)
-        {
+            if (Input.GetAxis("Vertical") > 0 && isGround)
+            {
 
-            myRigidbody.AddForce(new Vector2(0, 125));
-            isGround = false;
+                myRigidbody.AddForce(new Vector2(0, 125));
+                isGround = false;
 
 
+            }
         }
-        print(myRigidbody.velocity.y);
-
-        if (changeGravity)
+        else
         {
 
             myRigidbody.velocity = new Vector3(Input.GetAxis("Horizontal") * 3f, myRigidbody.velocity.y, 0);
 
 
+            //myRigidbody.AddForce(new Vector2(0, 60));
 
-            transform.DOMoveY(0.5f, 3);
             if (Input.GetAxis("Vertical") > 0 && isGround)
             {
-                transform.DOMoveY(-5, 1);
+                myRigidbody.AddForce(new Vector2(0, -125));
                 //transform.position = transform.position + new Vector3(0, -10, 0);
-              isGround = false;
-               
+                isGround = false;
+
 
             }
-        }
+        } 
         
     }
     private void OnCollisionStay2D(Collision2D collision)
@@ -119,9 +119,10 @@ public class Player : MonoBehaviour
         }
         if (collision.gameObject.tag == "ChangeGravity")
         {
-            changeGravity = true;
-            platformAfterGravityChange.gameObject.SetActive(true);
+            changeGravity = !changeGravity;
+            //platformAfterGravityChange.gameObject.SetActive(true);
             transform.eulerAngles = new Vector3(0, 0, 180);
+            myRigidbody.gravityScale *= -1;
 
         }
         if (collision.gameObject.tag == "Wind")
