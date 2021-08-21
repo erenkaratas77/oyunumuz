@@ -5,11 +5,13 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public ParticleSystem teleport;
+    public ParticleSystem gravity;
+    public ParticleSystem portal;
+
     Rigidbody2D myRigidbody;
     bool isGround = false;
     bool facingRight = true;
-    [SerializeField] GameObject right;
-    [SerializeField] GameObject left;
+    
     bool changeGravity = false;
     [SerializeField] GameObject platformAfterGravityChange;
 
@@ -30,38 +32,40 @@ public class Player : MonoBehaviour
     {
         if (!changeGravity)
         {
+
+
             if (myRigidbody.velocity.x < 0 && facingRight)
             {
                 facingRight = !facingRight;
 
-                right.gameObject.SetActive(true);
-                left.gameObject.SetActive(false);
+                transform.eulerAngles = new Vector3(0, 180,0);
+
 
 
             }
             else if (myRigidbody.velocity.x > 0 && !facingRight)
             {
                 facingRight = !facingRight;
-                right.gameObject.SetActive(false);
-                left.gameObject.SetActive(true);
+                transform.eulerAngles = new Vector3(0, 0,0);
             }
         }
         else
         {
+
+
+
             if (myRigidbody.velocity.x < 0 && facingRight)
             {
                 facingRight = !facingRight;
 
-                right.gameObject.SetActive(false);
-                left.gameObject.SetActive(true);
+                transform.eulerAngles = new Vector3(0, 0,180);
 
 
             }
             else if (myRigidbody.velocity.x > 0 && !facingRight)
             {
                 facingRight = !facingRight;
-                right.gameObject.SetActive(true);
-                left.gameObject.SetActive(false);
+                transform.eulerAngles = new Vector3(0, 180,180);
             }
 
         }
@@ -74,7 +78,7 @@ public class Player : MonoBehaviour
             if (Input.GetAxis("Vertical") > 0 && isGround)
             {
 
-                myRigidbody.AddForce(new Vector2(0, 125));
+                myRigidbody.AddForce(new Vector2(0, 165));
                 isGround = false;
 
 
@@ -90,7 +94,7 @@ public class Player : MonoBehaviour
 
             if (Input.GetAxis("Vertical") > 0 && isGround)
             {
-                myRigidbody.AddForce(new Vector2(0, -125));
+                myRigidbody.AddForce(new Vector2(0, -165));
                 //transform.position = transform.position + new Vector3(0, -10, 0);
                 isGround = false;
 
@@ -117,15 +121,19 @@ public class Player : MonoBehaviour
         }
         if (collision.gameObject.tag == "ChangeGravity")
         {
-            changeGravity = !changeGravity;
-            //platformAfterGravityChange.gameObject.SetActive(true);
             transform.eulerAngles = new Vector3(0, 0, 180);
-            myRigidbody.gravityScale *= -1;
+
+            gravity.Play();
+            changeGravity = true;
+            //platformAfterGravityChange.gameObject.SetActive(true);
+            myRigidbody.gravityScale = -1;
 
         }
-        if (collision.gameObject.tag == "sarkıt1")
-        {
-            sarkıt1.gameObject.SetActive(true);       }
+        if (collision.gameObject.tag == "sarkıt1") { 
+            portal.Play();
+        
+            sarkıt1.gameObject.SetActive(true);      
+        }
 
 
     }

@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Ground
+  - ChangeGravity
+  - "sark\u0131t1"
+  - Teleport
   layers:
   - Default
   - TransparentFX
@@ -38,6 +42,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: BG
+    uniqueID: 2428093135
+    locked: 0
+  - name: tile magara
+    uniqueID: 1503832923
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
