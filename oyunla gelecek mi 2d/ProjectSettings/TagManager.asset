@@ -5,9 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
-  - ChangeGravity
   - "sark\u0131t1"
   - Teleport
+  - ChangeGravityDown
+  - ChangeGravityUp
+  - border
+  - buEngeller
   layers:
   - Default
   - TransparentFX

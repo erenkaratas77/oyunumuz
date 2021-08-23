@@ -23,4 +23,6 @@ public class Teleporting : MonoBehaviour
             thePlayer.transform.position = teleportTarget.transform.position;
         }
     }
+
+
 }
