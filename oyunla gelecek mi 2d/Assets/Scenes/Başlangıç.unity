@@ -305,7 +305,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 174041241}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.9, y: 6.1, z: 0}
+  m_LocalPosition: {x: -1.9, y: 18.19, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 313374806}
@@ -1930,7 +1930,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.7618426, y: 7.38, z: -7.6892166}
+  m_LocalPosition: {x: 0.7618426, y: 19.47, z: -7.6892166}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2223,13 +2223,15 @@ MonoBehaviour:
   StartPanel: {fileID: 1055786163860671377}
   GameOverPanel: {fileID: 1055786164718146895}
   PausePanel: {fileID: 1055786163712304154}
-  torchSesTetik: {fileID: 1284273155}
+  PlayPanel: {fileID: 1055786164738616234}
   "sesZ\u0131plama": {fileID: 1384562060}
   buEngeller: {fileID: 1049965329}
   torchPartcile: {fileID: 1608828020}
   torchBoomPartcile: {fileID: 1272404405}
-  scoreTxt: {fileID: 0}
+  torchSesTetik: {fileID: 1284273155}
   DiamondCount: 0
+  Diamondtext: {fileID: 1055786165589593451}
+  scoreTxt: {fileID: 1055786165012184782}
 --- !u!4 &655754375
 Transform:
   m_ObjectHideFlags: 0
@@ -43771,7 +43773,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1647666623}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.7618426, y: 7.38, z: -7.6892166}
+  m_LocalPosition: {x: 0.7618426, y: 19.47, z: -7.6892166}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1654967294}
@@ -46069,7 +46071,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1055786163860889969}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 655754374}
+        m_MethodName: RestartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1055786163860889969
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46273,7 +46286,7 @@ GameObject:
   - component: {fileID: 1055786164005040803}
   - component: {fileID: 1055786164005040802}
   m_Layer: 5
-  m_Name: diamond
+  m_Name: diamond image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46416,7 +46429,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1055786164131473100}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 655754373}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!222 &1055786164226126880
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -46467,7 +46491,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1055786164226126883}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 655754374}
+        m_MethodName: RestartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1055786164226126883
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46510,7 +46545,7 @@ GameObject:
   - component: {fileID: 1055786164226126883}
   - component: {fileID: 1055786164226126882}
   m_Layer: 5
-  m_Name: mainMenu
+  m_Name: mainMenu button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47417,7 +47452,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1055786164942516347}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 655754374}
+        m_MethodName: ContinueGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1055786164942516347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47533,7 +47579,7 @@ GameObject:
   - component: {fileID: 1055786165012184783}
   - component: {fileID: 1055786165012184782}
   m_Layer: 5
-  m_Name: score
+  m_Name: score text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47776,7 +47822,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1055786165040205600}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 655754374}
+        m_MethodName: RestartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1055786165040205613
 GameObject:
   m_ObjectHideFlags: 0
@@ -47790,7 +47847,7 @@ GameObject:
   - component: {fileID: 1055786165040205600}
   - component: {fileID: 1055786165040205603}
   m_Layer: 5
-  m_Name: restart
+  m_Name: restart buton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48043,7 +48100,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1055786165551527488}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 655754374}
+        m_MethodName: StartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1055786165551527501
 GameObject:
   m_ObjectHideFlags: 0
@@ -48057,7 +48125,7 @@ GameObject:
   - component: {fileID: 1055786165551527488}
   - component: {fileID: 1055786165551527491}
   m_Layer: 5
-  m_Name: start
+  m_Name: start button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48233,7 +48301,7 @@ GameObject:
   - component: {fileID: 1055786165589593448}
   - component: {fileID: 1055786165589593451}
   m_Layer: 5
-  m_Name: diamond number
+  m_Name: diamond count
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48298,4 +48366,4 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 10
+  m_Text: 0

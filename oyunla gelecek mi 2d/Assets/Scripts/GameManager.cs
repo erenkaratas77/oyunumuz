@@ -40,6 +40,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        StartPanel.SetActive(true);
         PlayPanel.SetActive(false);
         GameOverPanel.SetActive(false);
         PausePanel.SetActive(false);
@@ -65,7 +66,7 @@ public class GameManager : MonoBehaviour
         GameOverPanel.SetActive(true);
     }
 
-    public void Restart()
+    public void RestartGame()
     {
         SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
     }

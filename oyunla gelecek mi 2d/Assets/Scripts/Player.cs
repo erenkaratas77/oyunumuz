@@ -147,6 +147,7 @@ public class Player : MonoBehaviour
         {
             isDead = true;
             Debug.Log("sen varya bittin bittin");
+            //ölme animasnu fonksiyn içinde oynar
             GameManager.instance.GameOver();
         }
 
