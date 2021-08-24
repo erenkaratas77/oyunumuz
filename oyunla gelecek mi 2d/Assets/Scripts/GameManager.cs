@@ -10,10 +10,13 @@ public class GameManager : MonoBehaviour
     public GameObject StartPanel;
     public GameObject GameOverPanel;
     public GameObject PausePanel;
+    public GameObject torchSesTetik;
 
     [Header("Audio")]
     public AudioSource sesZıplama;
     public AudioSource buEngeller;
+    public ParticleSystem torchPartcile;
+    public ParticleSystem torchBoomPartcile;
 
 
     [Header("Level Information")]
@@ -89,5 +92,12 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1;
         PausePanel.SetActive(false);
+    }
+    public void torch()
+    {
+        torchPartcile.Play();
+        torchBoomPartcile.Play();
+        torchSesTetik.gameObject.SetActive(false);
+
     }
 }

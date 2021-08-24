@@ -14,9 +14,9 @@ public class Player : MonoBehaviour
     bool isRun = false;
     bool isJump = false;
     bool isDead = false;
+    public AudioSource torchSound;
 
     bool changeGravityDown = false;
-    [SerializeField] GameObject platformAfterGravityChange;
 
     [SerializeField] GameObject sarkıt1;
     //public AudioSource sesZıplama;
@@ -194,7 +194,15 @@ public class Player : MonoBehaviour
             GameManager.instance.EngelSound();
 
         }
+        if (collision.gameObject.tag == "torch")
+        {
+            GameManager.instance.torch();
 
+        }
+        if (collision.gameObject.tag == "torchSound")
+        {
+            torchSound.Play();
+        }
 
     }
 
