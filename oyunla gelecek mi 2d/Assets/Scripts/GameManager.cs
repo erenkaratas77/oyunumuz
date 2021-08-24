@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,7 +10,7 @@ public class GameManager : MonoBehaviour
     public GameObject StartPanel;
     public GameObject GameOverPanel;
     public GameObject PausePanel;
-    public GameObject PlayPanel;
+    public GameObject torchSesTetik;
 
     [Header("Audio")]
     public AudioSource sesZıplama;
@@ -19,15 +18,10 @@ public class GameManager : MonoBehaviour
     public ParticleSystem torchPartcile;
     public ParticleSystem torchBoomPartcile;
 
-    public GameObject torchSesTetik;
-
 
     [Header("Level Information")]
-    
+    public GameObject scoreTxt;
     public int DiamondCount = 0;
-    public Text Diamondtext;
-    public Text scoreTxt;
-
 
     public static GameManager instance;
 
@@ -40,12 +34,11 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartPanel.SetActive(true);
-        PlayPanel.SetActive(false);
+       // StartPanel.SetActive(false);
         GameOverPanel.SetActive(false);
-        PausePanel.SetActive(false);
-        Time.timeScale = 0;
-
+       // PausePanel.SetActive(false);
+      
+        
     }
 
     // Update is called once per frame
@@ -58,26 +51,19 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("deneme fonksiyonudur.");
     }
-
     public void GameOver()
     {
-        //ÖLME ANİMASYONU
+        //ölme animasyonu
         Debug.Log("YOU DİED");
         GameOverPanel.SetActive(true);
     }
 
-    public void RestartGame()
+    public void Restart()
     {
         SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
     }
 
-
-    public void StartGame()
-    {
-        Time.timeScale = 1;
-        StartPanel.SetActive(false);
-        PlayPanel.SetActive(true);      
-    }
+   
 
     public void JumpSound()
     {
@@ -107,7 +93,6 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
         PausePanel.SetActive(false);
     }
-
     public void torch()
     {
         torchPartcile.Play();
